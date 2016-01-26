@@ -2855,3 +2855,8 @@ h6 {
   z-index: 99;
   cursor: pointer;
 }
+.seccion1,.seccion2{
+  width:100%;
+  text-align: center;
+  padding: 0;
+}

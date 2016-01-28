@@ -1,13 +1,25 @@
 $(function(){
-	var $headerCm = $('#cm-header');
-	var $topHeader = $headerCm.offset().top;
-	var $btnScroll = $('.circle');
-	var $video = $(".tapa");
-	var pantalla = $(window).width();
-	var $titulo = $("#titulo");
+
+
+	var $headerCm   	 = $('#cm-header');
+	var $topHeader  	 = $headerCm.offset().top;
+	var $btnScroll  	 = $('.circle');
+	var $videoPlay       = $(".tapa");
+	var $pantalla    	 = $(window).width();
+	var $titulo     	 = $("#titulo");
+	var $ctrlVideo  	 = $("#ctrl-video span");
+	var $videoContenedor = $(".m-video").css("height");
+	var $urlVideo3 = "https://www.youtube.com/embed/-shCDK2nPxU?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo2 = "https://www.youtube.com/embed/BUzyff8Nn9Y?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo1 = "https://www.youtube.com/embed/4zTHXk3mEHI?rel=0&controls=0&showinfo=0&modestbranding=0";
+
+	function dameAttr (objeto) {
+		return $(objeto).attr("data-play-video");
+	}
+
 	$(window).on('scroll',function(){
-		var $top = $(window).scrollTop();
-		if($top > $topHeader){
+		var $topi = $(window).scrollTop();
+		if($topi > $topHeader){
 			$headerCm.css({'position':'fixed'});
 		}else{
 			$headerCm.css({'position':'relative'});
@@ -16,17 +28,60 @@ $(function(){
 	$btnScroll.on('click',function(){
 		 $('body , html').animate({scrollTop:$topHeader},1000,'easeInOutExpo');
 	});
-	$video.on("click",function(){
+	$videoPlay.on("click",function(){
 		var youtube = $(this).siblings("iframe");
-		$(youtube).attr("src","https://www.youtube.com/embed/-shCDK2nPxU?autoplay=1&rel=0&controls=0&showinfo=0&modestbranding=0");
-		var myVar = setInterval(function(){ $video.css("display","none") }, 1500);
-		
+		var url = $(youtube).attr("src");
+		var url2 = url + "&autoplay=1"
+		$(youtube).attr("src" , url2);
+		setTimeout(function(){
+		  $videoPlay.css("display","none");
+		}, 2000);
 	});
+	$ctrlVideo.on("click",function() {
+		$(this).parent().parent().find("span").removeClass("active");
+		$(this).addClass("active");
+		var active = dameAttr(this);
+		var $video = $("#video-iframe");
+		switch(active){
+			case "1":
 
-	if(pantalla < 480){
+				$videoPlay.css({
+					"background-image": "url(../images/map-marker.png)",
+					display: "block"
+				});
+				$video.removeAttr("src");
+				$video.attr("src",$urlVideo1);
+				console.log(active);
+				break;
+			case "2":
+				$videoPlay.css({
+					"background-image": "url(../images/dotted.png)",
+					display: "block"
+				});
+				$video.removeAttr("src");
+				$video.attr("src",$urlVideo2);
+				console.log(active);
+				break;
+			case "3":
+				$videoPlay.css({
+					"background-image": "url(../images/bg-video.jpg)",
+					display: "block"
+				});
+				
+				$video.removeAttr("src");
+				$video.attr("src",$urlVideo3);
+				console.log(active);
+				break;
+			default:
+				console.log($video);
+		}
+
+	})
+
+	if($pantalla < 480){
 		$titulo.css("font-size","3.5em");
 	}
-	if (pantalla > 480 && pantalla < 769){
+	if ($pantalla > 480 && $pantalla < 769){
 		$titulo.css("font-size","4.8em");
 	}
 

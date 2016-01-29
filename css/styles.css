@@ -2969,6 +2969,34 @@ h6 {
   cursor: pointer;
   padding: 0;        
 }
+.tapa:after,
+.tapa:before{
+  content:"";
+  position:fixed;
+  width:0;
+  height:0;
+  margin:auto;
+  top:0;
+  left:0;
+  bottom:0;
+  right:0;
+}
+.tapa:hover:after{
+  left:2em;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 80px solid #48941f;
+  border-bottom: 50px solid transparent;
+  
+}
+.tapa:hover:before{
+  width:200px;
+  height: 200px;
+  background: rgba(255,255,255,.8);
+  border-radius: 50%;
+  border:3px solid #48941f;
+}
 .h1{
   margin-top: -40px;
   font-size: 80px;

@@ -2960,6 +2960,7 @@ h2.h1 span{
 .m-video{
   max-height: 85vh;
   overflow:hidden;
+  padding-top: .5em;
 }
 .m-video iframe{
   top:-18%;
@@ -2987,6 +2988,12 @@ h2.h1 span{
 }
 .control-video span:before{
   margin-top: -.15em;
+}
+.ctrlVideo{
+  padding-top: 2.3em;
+}
+.ctrlVideo p{
+  line-height: 1.8em;
 }
 .cm{
   height: 70vh;
@@ -3045,4 +3052,7 @@ h2.h1 span{
 .cm-modal button.btn-modal:active,
 .cm-modal button.btn-modal:focus{
   border: none;
+}
+#ubicacion{
+  padding: 5em 0 1.5em 0;
 }

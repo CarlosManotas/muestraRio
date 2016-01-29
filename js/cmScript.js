@@ -14,15 +14,27 @@ $(function(){
 	var $urlVideo3 		 = "https://www.youtube.com/embed/-shCDK2nPxU?rel=0&controls=0&showinfo=0&modestbranding=0";
 	var $urlVideo2 		 = "https://www.youtube.com/embed/BUzyff8Nn9Y?rel=0&controls=0&showinfo=0&modestbranding=0";
 	var $urlVideo1 		 = "https://www.youtube.com/embed/4zTHXk3mEHI?rel=0&controls=0&showinfo=0&modestbranding=0";
-
+	var voyPorAqui ;
 	function dameAttr (objeto) {
 		return $(objeto).attr("data-play-video");
 	}
 	$abrirModal.on("click",function(){
+		voyPorAqui = $(window).scrollTop();
 		$(this).next().css("display","block");
+		$(document).find('body').css({
+			overflow : 'hidden',
+			height :'100vh'
+		});
+
 	});
+
 	$btnModal.on("click",function(){
+		$('body , html').animate({scrollTop:(voyPorAqui)},1);
 		$(this).parent().parent().parent().css("display","none");
+		$(document).find('body').css({
+			overflow : 'auto',
+			height :'100%'
+		});
 	});
 	$(window).on('scroll',function(){
 		var $topi = $(window).scrollTop();

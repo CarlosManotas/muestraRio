@@ -2876,8 +2876,8 @@ h6 {
   transition:visibility 3s;
 }
 .circle.circle-masterplan[data-position="4"]{
-  left:44em;
-  top:6.7em;
+  right:31em;
+  top:8em;
   transition:visibility 7s;
 }
 .circle.circle-masterplan[data-position="5"]{
@@ -2892,7 +2892,33 @@ h6 {
   transform: rotate(45deg);
   display: block;
 }
-
+@media all and (min-width: 1400px){
+  .circle.circle-masterplan[data-position="1"]{
+    right:8em;
+    top:20em;
+    transition:visibility 1s;
+  }
+  .circle.circle-masterplan[data-position="2"]{
+    right:13.5em;
+    top:3.7em;
+    transition:visibility 5s;
+  }
+  .circle.circle-masterplan[data-position="3"]{
+    right:40em;
+    top:5em;
+    transition:visibility 3s;
+  }
+  .circle.circle-masterplan[data-position="4"]{
+    right:40em;
+    top:15em;
+    transition:visibility 7s;
+  }
+  .circle.circle-masterplan[data-position="5"]{
+    left:8em;
+    top:9em;
+    transition:visibility 4s;
+  }
+}
 @keyframes cm-plus{
   0%{
     -webkit-transform:scale(1.1);

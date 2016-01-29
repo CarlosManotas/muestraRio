@@ -509,13 +509,13 @@ overflow:hidden;
 /* footer */
 /* ================================================== */
 footer {
-	background: #111;
-	color: #ccc;
+	background: #e1e1e1;
+	color: #111;
 	padding: 80px 0 0 0;
 	}
 	
 	footer h3, .de_light footer h3 {
-	color:#fff;
+	color:#48941f;
 	font-size: 20px;
 	}
 	
@@ -532,7 +532,7 @@ footer {
 	}
 
 	.subfooter{
-	background:#0b0b0b;
+	background:#bebdbd;
 	padding:30px 0 20px 0;
 	}
 

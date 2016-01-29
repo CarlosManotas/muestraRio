@@ -1,28 +1,38 @@
 $(function(){
-
-
+	var $abrirModal      = $("#masterplanBtn .circle-masterplan");
+	var $btnModal 		 = $("#cm-modal button");
 	var $headerCm   	 = $('#cm-header');
 	var $topHeader  	 = $headerCm.offset().top;
-	var $btnScroll  	 = $('.circle');
+	var $masterplan  	 = $("#masterplan").offset().top;
+	var $circleMaster    = $(".circle.circle-masterplan");
+	var $btnScroll  	 = $('#circle');
 	var $videoPlay       = $(".tapa");
 	var $pantalla    	 = $(window).width();
 	var $titulo     	 = $("#titulo");
 	var $ctrlVideo  	 = $("#ctrl-video span");
 	var $videoContenedor = $(".m-video").css("height");
-	var $urlVideo3 = "https://www.youtube.com/embed/-shCDK2nPxU?rel=0&controls=0&showinfo=0&modestbranding=0";
-	var $urlVideo2 = "https://www.youtube.com/embed/BUzyff8Nn9Y?rel=0&controls=0&showinfo=0&modestbranding=0";
-	var $urlVideo1 = "https://www.youtube.com/embed/4zTHXk3mEHI?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo3 		 = "https://www.youtube.com/embed/-shCDK2nPxU?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo2 		 = "https://www.youtube.com/embed/BUzyff8Nn9Y?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo1 		 = "https://www.youtube.com/embed/4zTHXk3mEHI?rel=0&controls=0&showinfo=0&modestbranding=0";
 
 	function dameAttr (objeto) {
 		return $(objeto).attr("data-play-video");
 	}
-
+	$abrirModal.on("click",function(){
+		$(this).next().css("display","block");
+	});
+	$btnModal.on("click",function(){
+		$(this).parent().parent().parent().css("display","none");
+	});
 	$(window).on('scroll',function(){
 		var $topi = $(window).scrollTop();
 		if($topi > $topHeader){
 			$headerCm.css({'position':'fixed'});
 		}else{
 			$headerCm.css({'position':'relative'});
+		}
+		if($topi >= ($masterplan - 300)){
+			$circleMaster.css("visibility","visible");
 		}
 	});
 	$btnScroll.on('click',function(){

@@ -2824,7 +2824,92 @@ h6 {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+.circle.circle-masterplan{
+  width: 45px;
+  height: 45px;
+  opacity: .8;
+  position: absolute;
+  visibility: hidden;
+  transition:all 1s;
+  animation-duration: 3s;
+  animation-name: cm-plus;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.circle.circle-masterplan:hover{
+  opacity: 1;
+  transition:all .3s;
+}
+.circle.circle-masterplan:after{
+  position: absolute;
+  content: "";
+  width: 150%;
+  height: 0;
+}
+.circle.circle-masterplan:hover:after{
+  width: 150px;
+  height: auto;
+  text-align: center;
+  background: #fff;
+  border-radius: 8px;
+  content: attr(data);
+  font-size: .8em;
+  top:-2em;
+  left:-3.5em;
+  color:#000;
+  transition:all .5s;
 
+}
+.circle.circle-masterplan[data-position="1"]{
+  right:6em;
+  top:12.5em;
+  transition:visibility 1s;
+}
+.circle.circle-masterplan[data-position="2"]{
+  right:13.5em;
+  top:3.7em;
+  transition:visibility 5s;
+}
+.circle.circle-masterplan[data-position="3"]{
+  right:27.5em;
+  top:3.7em;
+  transition:visibility 3s;
+}
+.circle.circle-masterplan[data-position="4"]{
+  left:44em;
+  top:6.7em;
+  transition:visibility 7s;
+}
+.circle.circle-masterplan[data-position="5"]{
+  left:8em;
+  top:9em;
+  transition:visibility 4s;
+}
+.circle.circle-masterplan span{
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  display: block;
+}
+
+@keyframes cm-plus{
+  0%{
+    -webkit-transform:scale(1.1);
+  }
+  25%{
+    -webkit-transform: scale(.9);
+  }
+  50%{
+    -webkit-transform: scale(1.1);
+  }
+  75%{
+    -webkit-transform: scale(.9);
+  }
+  100%{
+    -webkit-transform: scale(1.1);
+  }
+}
 @keyframes cm{
   0%{
     margin-top: 0;
@@ -2866,6 +2951,7 @@ h6 {
   font-size: .4em;
   padding-bottom: .3em;
   border-bottom: 1px solid #5f5e5e;
+  text-transform: uppercase;
 }
 h2.h1 span{
   display: block;
@@ -2901,4 +2987,62 @@ h2.h1 span{
 }
 .control-video span:before{
   margin-top: -.15em;
+}
+.cm{
+  height: 70vh;
+  width: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+    background-size: cover;  
+}
+.cm.masterplan{
+  background-image: url(../images/masterplan.jpg);
+  position: relative;
+}
+.cm.galeria{
+  height: auto;
+  padding-bottom: 0 ;
+}
+.cm.ubicacion{
+  background-image: url(../images/background/subheader-1.jpg);
+}
+.cm.acceso{
+  background-image: url(../images/background/subheader-2.jpg)
+}
+.cm-modal{
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  background: rgba(255,255,255,.95);
+  top:0;
+  left: 0;
+  z-index: 9999999;
+  display: none;
+  overflow-y: scroll;
+}
+.cm-modal figure img{
+  width: 100%;
+}
+.cm-modal h2{
+  text-transform: uppercase;
+  font-size: 3em;
+}
+.cm-modal button{
+  margin-top: 1em;
+  background: #999;
+  border:none;
+  color:white;
+}
+.cm-modal button.btn-modal{
+  text-align: center;
+  margin: 1em auto;
+  font-size: 2em;
+  background: transparent;
+  color:#111;
+}
+.cm-modal button.btn-modal:active,
+.cm-modal button.btn-modal:focus{
+  border: none;
 }

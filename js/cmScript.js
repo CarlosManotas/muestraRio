@@ -12,9 +12,11 @@ $(function(){
 	var $ctrlVideo  	 = $("#ctrl-video span");
 	var $videoContenedor = $(".m-video").css("height");
 	var $urlVideo3 		 = "https://www.youtube.com/embed/-shCDK2nPxU?rel=0&controls=0&showinfo=0&modestbranding=0";
-	var $urlVideo2 		 = "https://www.youtube.com/embed/BUzyff8Nn9Y?rel=0&controls=0&showinfo=0&modestbranding=0";
-	var $urlVideo1 		 = "https://www.youtube.com/embed/4zTHXk3mEHI?rel=0&controls=0&showinfo=0&modestbranding=0";
-	var voyPorAqui ;
+	var $urlVideo2 		 = "https://www.youtube.com/embed/jqglZXXeDCo?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $urlVideo1 		 = "https://www.youtube.com/embed/DFgHj1txNSo?rel=0&controls=0&showinfo=0&modestbranding=0";
+	var $imgBtn = $('#acceso');
+	var voyPorAqui;
+	var cmBtn;
 	function dameAttr (objeto) {
 		return $(objeto).attr("data-play-video");
 	}
@@ -66,9 +68,8 @@ $(function(){
 		var $video = $("#video-iframe");
 		switch(active){
 			case "1":
-
 				$videoPlay.css({
-					"background-image": "url(../images/map-marker.png)",
+					"background-image": "url(../images/bgvideo3-elproyecto.jpg)",
 					display: "block"
 				});
 				$video.removeAttr("src");
@@ -77,7 +78,7 @@ $(function(){
 				break;
 			case "2":
 				$videoPlay.css({
-					"background-image": "url(../images/dotted.png)",
+					"background-image": "url(../images/bgvideo2-elproyecto.jpg)",
 					display: "block"
 				});
 				$video.removeAttr("src");
@@ -86,7 +87,7 @@ $(function(){
 				break;
 			case "3":
 				$videoPlay.css({
-					"background-image": "url(../images/bg-video.jpg)",
+					"background-image": "url(../images/bg1-videoelproyecto.jpg)",
 					display: "block"
 				});
 				
@@ -107,4 +108,19 @@ $(function(){
 		$titulo.css("font-size","4.8em");
 	}
 
+
+	$imgBtn.on('click', 'img', function() {
+		$(document).find('.showText').css('display','none');
+		cmBtn = $(document).find('.cmBtn');
+		var t = $(this);
+		var imgAttr = t.attr('alt');
+		var showMeText = $(document).find('.showText[alt='+ imgAttr + ']');
+		showMeText.css('display','block');
+		console.log(imgAttr);
+		console.log(showMeText);
+		cmBtn.on('click', function() {
+			$(this).parent().css('display','none');
+		});
+	});
+	
 });

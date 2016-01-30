@@ -2817,6 +2817,12 @@ h6 {
   font-size: 1.3em;
   margin-top: auto;
 }
+#circle{
+  width: 45px;
+  height: 45px;
+  background: #48941f;
+  opacity: .8;
+}
 .circle span.icon-abajo{
   
   animation-duration: 1s;
@@ -2919,6 +2925,23 @@ h6 {
     transition:visibility 4s;
   }
 }
+@-webkit-keyframes cm-plus{
+  0%{
+    -webkit-transform:scale(1.1);
+  }
+  25%{
+    -webkit-transform: scale(.9);
+  }
+  50%{
+    -webkit-transform: scale(1.1);
+  }
+  75%{
+    -webkit-transform: scale(.9);
+  }
+  100%{
+    -webkit-transform: scale(1.1);
+  }
+}
 @keyframes cm-plus{
   0%{
     -webkit-transform:scale(1.1);
@@ -2936,7 +2959,58 @@ h6 {
     -webkit-transform: scale(1.1);
   }
 }
+@-mz-keyframes cm-plus{
+  0%{
+    -webkit-transform:scale(1.1);
+  }
+  25%{
+    -webkit-transform: scale(.9);
+  }
+  50%{
+    -webkit-transform: scale(1.1);
+  }
+  75%{
+    -webkit-transform: scale(.9);
+  }
+  100%{
+    -webkit-transform: scale(1.1);
+  }
+}
+@-webkit-keyframes cm{
+  0%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: .4em;
+  }
+  50%{
+    margin-top: 0;
+  }
+  75%{
+    margin-top: -.4em;
+  }
+  100%{
+    margin-top: 0;
+  }
+}
 @keyframes cm{
+  0%{
+    margin-top: 0;
+  }
+  25%{
+    margin-top: .4em;
+  }
+  50%{
+    margin-top: 0;
+  }
+  75%{
+    margin-top: -.4em;
+  }
+  100%{
+    margin-top: 0;
+  }
+}
+@-mz-keyframes cm{
   0%{
     margin-top: 0;
   }
@@ -2957,13 +3031,13 @@ h6 {
   width:100%;
   height: 100%;
   position: absolute;
-  background-image: url(../images/bg-video.jpg);
+  background-image: url(../images/bg1-videoelproyecto.jpg);
   background-repeat: no-repeat;
   background-color:  rgba(255,255,255,.95);
-  -webkit-background-size:contain;
-  background-size:contain;
+  -webkit-background-size:cover;
+  background-size:cover;
   background-position: center center;
-  top:calc(56.25% / -2.75);
+  top:-18em;
   left:0;
   z-index: 99;
   cursor: pointer;
@@ -2976,7 +3050,7 @@ h6 {
   width:0;
   height:0;
   margin:auto;
-  top:0;
+  top:8em;
   left:0;
   bottom:0;
   right:0;
@@ -2986,16 +3060,16 @@ h6 {
   width: 0;
   height: 0;
   border-top: 50px solid transparent;
-  border-left: 80px solid #48941f;
+  border-left: 80px solid rgba(255,255,255,.5);
   border-bottom: 50px solid transparent;
   
 }
 .tapa:hover:before{
   width:200px;
   height: 200px;
-  background: rgba(255,255,255,.95);
+  background: rgba(255,255,255,.1);
   border-radius: 50%;
-  border:5px solid #48941f;
+  border:5px solid rgba(255,255,255,.5);
 }
 .h1{
   margin-top: -40px;
@@ -3066,10 +3140,68 @@ h2.h1 span{
   padding-bottom: 0 ;
 }
 .cm.ubicacion{
-  background-image: url(../images/background/subheader-1.jpg);
+  background-image: url(../images/subheader-1.jpg);
+  height: 60vh;
+}
+.cm.ubicacion .circle.circle-masterplan[data-position="1"]{
+  right:30em;
+  top:9.4em;
+  transition:visibility 1s;
+}
+.cm.ubicacion .texto-p{
+  background: rgba(0,0,0,.7);
+  width: 50%;
+  padding-left: 1em;
+}
+.cm.ubicacion .texto-p .h1{
+  color:white;
+  margin-top: 0;
 }
 .cm.acceso{
-  background-image: url(../images/background/subheader-2.jpg)
+  background-image: url(../images/subheader-2.jpg);
+  background-repeat: repeat;
+  background-position: center center;
+  height: 60vh;
+  position: relative;
+}
+#ubicacion{
+  /*padding: 1em !important;*/
+}
+#ubicacion .h1 span{
+  margin-bottom: 0 !important;
+}
+.cm.acceso img{
+  position: absolute;
+  width: 50px;
+  cursor: pointer;
+  animation-duration: 4s;
+  animation-name: cm-plus;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.cm.acceso img[alt="tren"]{
+  top:6.3em;
+  left: 48em;
+}
+.cm.acceso img[alt="bus"]{
+  top:13em;
+  left: 60em;
+}
+.cm.acceso img[alt="bus2"]{
+  left:53em;
+  top:2em;
+}
+.cm.acceso img[alt="bici"]{
+  left: 55em;
+  top:10em; 
+}
+.cm.acceso img[alt="persona"]{
+  left: 40em;
+  top:15em;
+}
+.cm.acceso img[alt="p"]{
+  left:48em;
+  top:18em;
 }
 .cm-modal{
   position: fixed;
@@ -3109,4 +3241,35 @@ h2.h1 span{
 }
 #ubicacion{
   padding: 5em 0 1.5em 0;
+}
+.google{
+  margin: 1.8em auto 5em auto;
+}
+.google .btn-cm{
+  color:white;
+  font-size: 1.2em
+}
+.google .btn-cm:hover{
+  color:white;
+  background: green;
+  font-size: 1.2em
+}
+.showText{
+  background: rgba(255,255,255,.7);
+  padding:1em 1.5em 2em 1.5em;
+  color:#333;
+  display: none;
+  position: relative;
+}
+.showText h2{
+  color:#333;
+  text-transform: uppercase;
+  margin: .5em 0;
+}
+.cmBtn{
+  position: absolute;
+  right: .5em;
+  top:.2em;
+  font-size: 1.2em;
+  cursor: pointer;
 }
